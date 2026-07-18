@@ -1,0 +1,22 @@
+{
+	"name": "LS_ONPrem_Sqlserver_DW",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Onprem to Sql server",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "RAHUL\\SQLEXPRESS",
+			"database": "RetailDW_Dev",
+			"encrypt": "mandatory",
+			"trustServerCertificate": true,
+			"authenticationType": "SQL",
+			"userName": "sagar",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhMWI4NjdmMy00NDEyLTQ2MTAtOWIxZC03MmFlZTJiM2RiMjkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime1",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
