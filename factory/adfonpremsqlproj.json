@@ -1,0 +1,15 @@
+{
+	"name": "adfonpremsqlproj",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f5764fd7-f60f-4536-a70c-aa730e8f0055",
+		"tenantId": "440d67c3-0c80-4fce-9e8e-c91020f4b97b"
+	}
+}
