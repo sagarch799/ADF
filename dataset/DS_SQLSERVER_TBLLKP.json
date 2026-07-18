@@ -1,0 +1,12 @@
+{
+	"name": "DS_SQLSERVER_TBLLKP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLSERVER_TBLLKP",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	}
+}

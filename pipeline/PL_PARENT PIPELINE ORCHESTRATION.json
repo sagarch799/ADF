@@ -13,10 +13,23 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"sqlReaderQuery": "SELECT [TableSchema]\n      ,[TableName]\n      ,[WatermarkColumn]\n      ,[LastLoadValue]\n  FROM [dbo].[ADF_Watermark_Table];",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_SQLSERVER_TBLLKP",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "ForEachSQLTable",
 				"type": "ForEach",
 				"dependsOn": [
 					{
@@ -28,6 +41,10 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
+					"items": {
+						"value": "@activity('LKUP_SQLTABLE_WATERMARK_DW').output.value",
+						"type": "Expression"
+					},
 					"activities": [
 						{
 							"name": "Execute_SQL_INCREMENT",
@@ -38,6 +55,10 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"pipeline": {
+									"referenceName": "PL_CHILDPIPELINE",
+									"type": "PipelineReference"
+								},
 								"waitOnCompletion": true
 							}
 						}
